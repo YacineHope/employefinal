@@ -46,7 +46,7 @@ body {
   background-color: #6200ea;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 8px 12px;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
@@ -59,6 +59,60 @@ body {
 .btn:hover {
   background-color: #3700b3;
   transform: translateY(-2px);
+}
+
+.btn.cancel {
+  background-color: #f44336;
+}
+
+.btn.cancel:hover {
+  background-color: #d32f2f;
+}
+
+.btn.edit {
+  background-color: #03a9f4;
+}
+
+.btn.edit:hover {
+  background-color: #0288d1;
+}
+
+/* Conteneur des boutons */
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Bouton "Confirmer" à gauche */
+.form-buttons .btn.confirm {
+  margin-right: auto;
+  background-color: #4caf50;
+}
+
+.form-buttons .btn.confirm:hover {
+  background-color: #388e3c;
+}
+
+/* Bouton "Modifier" au centre */
+.form-buttons .btn.edit {
+  margin: 0 auto;
+  background-color: #03a9f4;
+}
+
+.form-buttons .btn.edit:hover {
+  background-color: #0288d1;
+}
+
+/* Bouton "Annuler" à droite */
+.form-buttons .btn.cancel {
+  margin-left: auto;
+  background-color: #f44336;
+}
+
+.form-buttons .btn.cancel:hover {
+  background-color: #d32f2f;
 }
 
 /* Styles pour les formulaires */
@@ -114,6 +168,12 @@ body {
 .message.error {
   background-color: #f8d7da;
   color: #721c24;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 0.9rem;
+  margin-top: 5px;
 }
 
 /* Détails de la réservation */
@@ -229,6 +289,13 @@ body {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+  background-color: #e0e0e0;
 }
 
 .stat-card h3 {
@@ -242,3 +309,995 @@ body {
   font-weight: bold;
   color: #333;
 }
+
+/* Styles for the Reservation List */
+.reservation-list {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.reservation-list h2 {
+  font-size: 1.8rem;
+  color: #6200ea;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.reservation-card {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reservation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.reservation-summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reservation-summary p {
+  font-size: 1rem;
+  margin: 5px 0;
+  flex: 1 1 45%;
+}
+
+.reservation-summary p strong {
+  color: #6200ea;
+}
+
+.reservation-summary .btn {
+  margin: 10px 5px;
+}
+
+.reservation-details {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-details p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.reservation-details p strong {
+  color: #6200ea;
+}
+
+.reservation-details .btn.authenticate {
+  background-color: #03a9f4;
+  color: white;
+}
+
+.reservation-details .btn.authenticate:hover {
+  background-color: #0288d1;
+}
+
+.reservation-card .btn.authenticate {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reservation-card .btn.authenticate:hover {
+  background-color: #388e3c;
+}
+
+/* Buttons for Accept and Reject */
+.btn.accept {
+  background-color: #4caf50;
+}
+
+.btn.accept:hover {
+  background-color: #388e3c;
+}
+
+.btn.reject {
+  background-color: #f44336;
+}
+
+.btn.reject:hover {
+  background-color: #d32f2f;
+}
+
+/* Button for "Voir les détails" */
+.btn.details {
+  background-color: #ff9800;
+}
+
+.btn.details:hover {
+  background-color: #f57c00;
+}
+
+/* Status styles */
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.status.accepted {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Delete button */
+.btn.delete {
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn.delete:hover {
+  background-color: #d32f2f;
+}
+
+/* Notification Button Container */
+.notification-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Notification Button */
+.notification-btn {
+  background-color: #03a9f4;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.notification-btn:hover {
+  background-color: #0288d1;
+}
+
+/* Notification Count Badge */
+.notification-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #f44336;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 5px 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Notifications Panel */
+.notifications-panel {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 300px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000;
+}
+
+.notifications-panel h3 {
+  font-size: 1.2rem;
+  color: #6200ea;
+  margin-bottom: 10px;
+}
+
+.notification-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notification-item p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.notification-item .btn.delete {
+  background-color: transparent;
+  color: #f44336;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s ease;
+}
+
+.notification-item .btn.delete:hover {
+  transform: scale(1.2);
+  color: #d32f2f;
+}
+
+/* Message pour aucune réservation */
+.no-reservations {
+  font-size: 1.2rem;
+  color: #6200ea;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Barre de recherche */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+
+.search-bar .search-icon {
+  color: #6200ea;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Reservation Management */
+.reservation-management {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.reservation-management h1,
+.reservation-management h2 {
+  color: #6200ea;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Formulaire de Réservation */
+.reservation-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.reservation-form form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.reservation-form .form-group {
+  flex: 1 1 calc(50% - 20px);
+}
+
+.reservation-form .form-group label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.reservation-form .form-group input,
+.reservation-form .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.reservation-form .form-group input:focus,
+.reservation-form .form-group select:focus {
+  border-color: #6200ea;
+  outline: none;
+}
+
+.reservation-form .btn {
+  flex: 1 1 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.reservation-form .btn.cancel {
+  background-color: #f44336;
+}
+
+.reservation-form .btn.cancel:hover {
+  background-color: #d32f2f;
+}
+
+/* Table des Informations des Chambres */
+.room-info {
+  margin-top: 30px;
+}
+
+.room-info table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.room-info th,
+.room-info td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.room-info th {
+  background-color: #6200ea;
+  color: white;
+  font-weight: bold;
+}
+
+.room-info td {
+  background-color: #f9f9f9;
+}
+
+.room-info .btn.edit {
+  background-color: #03a9f4;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.room-info .btn.edit:hover {
+  background-color: #0288d1;
+}
+
+/* Filtre des Chambres */
+.room-info select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Chambres Libérées Aujourd'hui */
+.room-vocated-today {
+  margin-top: 30px;
+}
+
+.room-vocated-today table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.room-vocated-today th,
+.room-vocated-today td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.room-vocated-today th {
+  background-color: #6200ea;
+  color: white;
+  font-weight: bold;
+}
+
+.room-vocated-today td {
+  background-color: #f9f9f9;
+}
+
+/* Réservations Annulées */
+.canceled-reservations {
+  margin-top: 30px;
+}
+
+.canceled-reservations table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.canceled-reservations th,
+.canceled-reservations td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.canceled-reservations th {
+  background-color: #6200ea;
+  color: white;
+  font-weight: bold;
+}
+
+.canceled-reservations td {
+  background-color: #f9f9f9;
+}
+
+/* Boutons dans les tableaux */
+.room-info .btn,
+.room-vocated-today .btn,
+.canceled-reservations .btn {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.room-info .btn:hover,
+.room-vocated-today .btn:hover,
+.canceled-reservations .btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Gestion des Chambres */
+.room-management {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.room-management h1 {
+  color: #6200ea;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Barre de recherche */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+
+.search-bar .search-icon {
+  color: #6200ea;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Filtres */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Tableau des chambres */
+.room-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.room-table th,
+.room-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.room-table th {
+  background-color: #6200ea;
+  color: white;
+  font-weight: bold;
+}
+
+.room-table td {
+  background-color: #f9f9f9;
+}
+
+/* Détails de la chambre */
+.room-details {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-details h1 {
+  font-size: 1.8rem;
+  color: #6200ea;
+  margin-bottom: 20px;
+}
+
+.room-details p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.room-details p strong {
+  color: #6200ea;
+}
+
+.room-details button {
+  margin-top: 20px;
+}
+
+/* Gestion des Clients */
+.clients-management {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.clients-management h1,
+.clients-management h2 {
+  color: #6200ea;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Formulaire Client */
+.client-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.client-form form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.client-form .form-group {
+  flex: 1 1 calc(50% - 20px);
+}
+
+.client-form .form-group label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.client-form .form-group input,
+.client-form .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.client-form .form-group input:focus,
+.client-form .form-group select:focus {
+  border-color: #6200ea;
+  outline: none;
+}
+
+.client-form .btn {
+  flex: 1 1 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 10px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.client-form .btn:hover {
+  background-color: #4b00b5;
+}
+
+.client-form .btn.edit {
+  background-color: #03a9f4;
+}
+
+.client-form .btn.edit:hover {
+  background-color: #0288d1;
+}
+
+/* Informations des Clients */
+.client-info {
+  margin-top: 30px;
+}
+
+.client-info h2 {
+  color: #6200ea;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Barre de recherche */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+
+.search-bar .search-icon {
+  color: #6200ea;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Filtres */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters select,
+.filters input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Tableau des clients */
+.client-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.client-table th,
+.client-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.client-table th {
+  background-color: #6200ea;
+  color: white;
+  font-weight: bold;
+}
+
+.client-table td {
+  background-color: #f9f9f9;
+}
+
+.client-table .btn {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.client-table .btn.edit {
+  background-color: #03a9f4;
+  color: white;
+}
+
+.client-table .btn.edit:hover {
+  background-color: #0288d1;
+}
+
+.client-table .btn.details {
+  background-color: #4caf50;
+  color: white;
+}
+
+.client-table .btn.details:hover {
+  background-color: #388e3c;
+}
+
+/* Détails du Client */
+.client-details {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.client-details h1 {
+  font-size: 1.8rem;
+  color: #6200ea;
+  margin-bottom: 20px;
+}
+
+.client-details p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.client-details p strong {
+  color: #6200ea;
+}
+
+.client-details button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.client-details button:hover {
+  background-color: #4b00b5;
+}
+
+/* Chat Container */
+.chat-container {
+  display: flex;
+  height: 80vh;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Liste des Clients */
+.client-list {
+  width: 30%;
+  background-color: #f5f5f5;
+  border-right: 1px solid #e0e0e0;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.client-list h2 {
+  font-size: 1.5rem;
+  color: #6200ea;
+  margin-bottom: 20px;
+}
+
+.client-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.client-list li {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.client-list li:hover {
+  background-color: #e0e0e0;
+}
+
+.client-list li.active {
+  background-color: #6200ea;
+  color: white;
+}
+
+/* Chat Window */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.chat-header {
+  background-color: #6200ea;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.message {
+  margin-bottom: 10px;
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.message.sent {
+  background-color: #6200ea;
+  color: white;
+  align-self: flex-end;
+}
+
+.message.received {
+  background-color: #e0e0e0;
+  color: #333;
+  align-self: flex-start;
+}
+
+.message p {
+  margin: 0;
+}
+
+.message .timestamp {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-top: 5px;
+  display: block;
+  text-align: right;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-input button:hover {
+  background-color: #4b00b5;
+}
+
+.no-client-selected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.2rem;
+  color: #6200ea;
+}
+
+/* Styles pour les champs obligatoires */
+.required {
+  color: #f44336;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.detailed-statistics {
+  padding: 20px;
+}
+
+.chart-container {
+  margin-bottom: 40px;
+}
+
+.chart-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  cursor: pointer;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+  background-color: #e0e0e0;
+}
+
